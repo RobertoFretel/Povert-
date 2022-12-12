@@ -6,7 +6,9 @@
     </ul>
     <ul>
         <li>
-            <slot name="button"></slot>
+            <a target="_blank" href="https://worldpoverty.io/map">
+                <slot name="button"></slot>
+            </a>
         </li>
     </ul>
 </nav>
@@ -45,5 +47,13 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
+    }
+
+    li a {
+        height: 100%;
+        aspect-ratio: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 </style>
