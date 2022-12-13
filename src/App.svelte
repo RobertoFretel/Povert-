@@ -1,15 +1,9 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import { fade } from "svelte/transition";
+    import { fade, fly } from "svelte/transition";
     import Nav from "./lib/Nav.svelte";
 
     let openedModal: boolean = false
-
-    onMount(() => {
-        document.body.addEventListener("click", () => {
-            document.body.requestFullscreen()
-        })
-    })
 </script>
 
 <div id="superheader">
@@ -48,7 +42,7 @@
     </div>
     <div id="column">
         {#if openedModal == false}
-            <div id="contTipi" out:fade={{}}>
+            <div id="contTipi" in:fly={{ x: 100, duration: 300 }} out:fly={{ x: -100, duration: 300 }}>
                 <hgroup>
                     <h4 style="margin-top: 1rem;">Tipi di Povertà</h4>
                     <p>
@@ -57,7 +51,7 @@
                 </hgroup>
             </div>
         {:else}
-            <div id="contTipi" in:fade={{}}>
+            <div id="contTipi" in:fly={{ x: -100, duration: 300 }} out:fly={{ x: 100, duration: 300 }}>
                 <hgroup>
                     <h4 style="margin-top: 1rem;">Cause della Povertà</h4>
                     <p>
