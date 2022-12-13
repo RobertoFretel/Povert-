@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="ico.webp" type="image">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Povertà</title>
 </head>
@@ -22,17 +24,28 @@
             margin: 0px;
         }
 
+        body {
+            scroll-snap-type: y mandatory;
+        }
+
+        #app::-webkit-scrollbar {
+            width: 0px;
+        }
+
         #app {
             width: 100%;
-            min-height: 100vh;
+            max-height: 100vh;
             padding: 0px;
             margin: 0px;
             background: rgb(175, 175, 175);
             background-size: 100vw 100%;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
         }
 
-        ::-webkit-scrollbar {
-            width: 0px;
+        #bodier, #superheader, #grafici {
+            scroll-snap-align: center;
         }
     </style>
 </body>

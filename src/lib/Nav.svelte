@@ -1,3 +1,16 @@
+<script lang="ts">
+    import { onMount } from "svelte";
+    
+    onMount(() => {
+        let ciao: HTMLElement = document.querySelector("#app")
+        ciao.querySelector("#button").addEventListener("click", () => {
+            ciao.scroll({
+                top: (document.querySelector("#grafici") as HTMLElement).offsetTop
+            })
+        })
+    })
+</script>
+
 <nav>
     <ul>
         <li>
@@ -6,7 +19,7 @@
     </ul>
     <ul>
         <li>
-            <a target="_blank" href="https://worldpoverty.io/map">
+            <a id="button">
                 <slot name="button"></slot>
             </a>
         </li>
